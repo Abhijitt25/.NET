@@ -1,0 +1,37 @@
+@using PLAYER;
+@{
+    ViewData["Title"] = "Player Profiles";
+}
+<style>
+    #para{
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-weight: 100;
+        color: rgb(0, 0, 0);
+    }
+    #img1{
+        border-style: double;
+        border-radius: 50px;
+        border-width: 7px;      
+    }
+</style>
+<div align = "center" >
+    @{
+        Player[] p_arr = ViewData["Players"] as Player[];
+        //Player p1 = ViewData["Players"] as Player;
+        for(int i=0; i<3; i++){
+            <hr/>
+           <img id = "img1" src=@p_arr[i].pImage alt="Profile Picture" width="100" height="100">
+
+           <div id="d2">
+                <p id="para">Player ID : @p_arr[i].pID</p>
+                <p id="para">Player Name : @p_arr[i].pName</p>
+                <p id="para">Player Level : @p_arr[i].plevel</p>
+                <hr/>
+            </div>
+        }
+    }
+    @* <img src=@p1.pImage alt="Profile Picture" width="100" height="100">
+    <h3>Player ID : @p1.pID</h3>
+    <h3>Player Name : @p1.pName</h3>
+    <h3>Player Level : @p1.plevel</h3> *@
+</div>
