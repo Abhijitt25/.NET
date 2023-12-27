@@ -1,0 +1,18 @@
+@using BOL.student;
+ 
+
+@{
+    ViewData["title"]="Index Page";
+}
+
+<div>
+    <h2>Records of Student</h2>
+    @{
+      List<Student> slist=(List<Student>)ViewData["student_list"];
+
+      @foreach(Student s in slist)
+      {
+        <p>@s.ID @s.First_name @s.Last_name</p>
+      }
+    }
+</div>
