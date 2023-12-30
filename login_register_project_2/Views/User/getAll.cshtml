@@ -1,0 +1,20 @@
+@using BOL;
+@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+
+    List<User> u_list = ViewData["Users"] as List<User>;
+    <legend align="center"><h1>User Details</h1></legend>
+    foreach (User u in u_list)
+    {
+        <fieldset>
+            <div class="text-center">
+                <p>Username: @u.Uname</p>
+                <p>Password: @u.Pass</p>
+                <p>Email: @u.Email</p>
+                <hr>
+            </div>
+        </fieldset>
+    }
+}

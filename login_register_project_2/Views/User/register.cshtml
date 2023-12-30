@@ -1,0 +1,42 @@
+@{
+    ViewData["Title"] = "Register Page";
+}
+@{
+    <div style="display:flex; justify-content:center">
+        @{
+            string msg = this.ViewData["msg"] as string;
+        }
+        <fieldset>
+            <legend style="font-size:40px;font-weight: bold;">Register</legend>
+            <form asp-controller="User" asp-action="Register" method="POST">
+                <div class="form-group">
+                    <label>Email address</label>
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Enter email" style="width:300px;">
+                </div>
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="username" name="uname" class="form-control" id="exampleInputUser1"
+                        aria-describedby="userHelp" placeholder="Enter username" style="width:300px;">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" name="pass" class="form-control" id="exampleInputPassword1"
+                        placeholder="Enter Password" style="width:300px;">
+                </div><br>
+                <div style="display:flex; justify-content:center">
+                    <div style="padding-right:20px;">
+                        <button type="submit" class="btn btn-primary" style="width:300px;">Submit</button>
+                    </div>
+                </div><br>
+                <div style="display:flex; justify-content: space-between; width:300px;">
+                    <a href=".\login" style="text-decoration:none;">Login</a>
+                </div>
+            </form>
+            <br>
+            <div>
+                <p style="color:rgb(40, 159, 3);">@msg</p>
+            </div>
+        </fieldset>
+    </div>
+}
