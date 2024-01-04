@@ -1,0 +1,14 @@
+@using BOL;
+@{
+    ViewData["Title"] = "Product By ID";
+}
+<div align = "center" >
+    @{
+        Product p = ViewData["Product"] as Product;
+        <div id="d2">
+            <p id="para">Product ID : @p.P_ID</p>
+            <p id="para">Product Desc : @p.P_Desc</p>
+            <hr/>
+        </div>
+    }
+</div>
